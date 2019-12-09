@@ -9,6 +9,9 @@
 </head>
 <body>
 <div th:replace="base :: navlinks"></div>
+<!--<h5>Welcome</h5>-->
+<!--<p th:text="${user.lastName}"></p>-->
+<!--<br/>-->
 <h1>Message Board</h1><br/>
 <div class="row" id="listfont">
 <div th:each="message : ${messages}">

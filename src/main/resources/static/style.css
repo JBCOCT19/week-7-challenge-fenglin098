@@ -9,6 +9,7 @@ body {
 .jumbotron {
     background-color: #9A8C98;
     margin: 70px;
+    width: fit-content;
 }
 
 h1 {

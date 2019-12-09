@@ -19,12 +19,6 @@ public class HomeController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    MessageRepository messageRepository;
-
-    @Autowired
-    CloudinaryConfig cloudc;
-
     @GetMapping("register")
     public String showRegistrationPage(Model model){
         model.addAttribute("user", new User());
@@ -43,6 +37,13 @@ public class HomeController {
         }
         return "index";
     }
+
+    @Autowired
+    MessageRepository messageRepository;
+
+    @Autowired
+    CloudinaryConfig cloudc;
+
     @RequestMapping("/")
     public String listMessages(Model model){
         model.addAttribute("messages", messageRepository.findAll());
