@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Leave a Message!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<div th:replace="base :: navlinks"></div>
+
+<div class="jumbotron">
+    <h1 class="display-4 text-center">Message Form</h1>
+    <hr class="my-4">
+    <form action="/process" th:object="${message}" method="post" enctype="multipart/form-data">
+        <input type="hidden" th:field="*{id}" />
+        <input type="hidden" th:field="*{pic}" />
+        <div class="form-group">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title" th:field="*{title}" />
+            <span th:if="${#fields.hasErrors('title')}"
+                  th:errors="*{title}"></span><br/>
+        </div>
+        <div class="form-row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Your Name" th:field="*{postedBy}" />
+                <span th:if="${#fields.hasErrors('postedBy')}"
+                      th:errors="*{postedBy}"></span><br/>
+            </div>
+            <div class="col">
+                <input type="date" class="form-control" placeholder="Posted Date" th:field="*{postedDate}" />
+                <span th:if="${#fields.hasErrors('postedDate')}"
+                      th:errors="*{postedDate}"></span><br/>
+            </div>
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" th:field="*{content}" placeholder="Message here..." /></textarea>
+            <span th:if="${#fields.hasErrors('content')}"
+                  th:errors="*{content}"></span>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file" />
+            <br/>
+            <button type="submit" class="btn btn-secondary">Submit</button>
+        </div>
+    </form>
+</div>
+<div th:replace="base :: bottom"></div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

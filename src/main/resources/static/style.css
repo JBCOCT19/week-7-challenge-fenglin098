@@ -1,0 +1,17 @@
+body {
+    background: url(https://images.squarespace-cdn.com/content/v1/52267bd2e4b00369aa8ea1c6/1546649826964-73XO0K8BQY5AO5E2NZNQ/ke17ZwdGBToddI8pDm48kFWxnDtCdRm2WA9rXcwtIYR7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1Uf_TT3g97i6_XmO-qcQt4zAfXqdI_5B_HjrxMT8d5xsm3WUfc_ZsVm9Mi1E6FasEnQ/Daily-Message-Background.png?format=2500w) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.jumbotron {
+    background-color: #9A8C98;
+    margin: 70px;
+}
+
+h1 {
+    text-align:center;
+    color: aliceblue;
+}

@@ -8,28 +8,14 @@
     <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 <body>
-<div th:replace="base :: navlinks"></div>
+<h3>Secure Page</h3>
+<a href="/logout">logout</a>
+<h4>email</h4>
+<p th:text="${user.email}"></p><br/>
+<h4>last name</h4>
+<p th:text="${user.lastName}"></p>
+<div th:replace="base :: bottom"></div>
 
-<div class="jumbotron">
-    <h1 class="display-4 text-center">Login Page</h1>
-    <hr class="my-4">
-<div th:if="${param.error}">
-    Invalid username or password
-</div>
-<div th:if="${param.logout}">
-    You have been logged out
-</div>
-    <br/>
-<form th:action="@{/login}" method="post">
-    <div><label>User name: <input type="text" name="username"/>
-    </label></div>
-
-    <div><label>Password: <input type="password" name="password"/>
-    </label></div>
-    <div><input type="submit" value="Sign in"/></div>
-</form>
-
-    <div th:replace="base :: bottom"></div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

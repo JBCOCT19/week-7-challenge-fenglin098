@@ -8,28 +8,26 @@
     <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 <body>
-<div th:replace="base :: navlinks"></div>
 
-<div class="jumbotron">
-    <h1 class="display-4 text-center">Login Page</h1>
-    <hr class="my-4">
-<div th:if="${param.error}">
-    Invalid username or password
-</div>
-<div th:if="${param.logout}">
-    You have been logged out
-</div>
-    <br/>
-<form th:action="@{/login}" method="post">
-    <div><label>User name: <input type="text" name="username"/>
-    </label></div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="navlinks">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/add">Add a Message</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/register">Register</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<footer th:fragment="bottom">
+    <div class="footer-copyright text-center py-3">© 2019 Copyright</div>
+</footer>
 
-    <div><label>Password: <input type="password" name="password"/>
-    </label></div>
-    <div><input type="submit" value="Sign in"/></div>
-</form>
-
-    <div th:replace="base :: bottom"></div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

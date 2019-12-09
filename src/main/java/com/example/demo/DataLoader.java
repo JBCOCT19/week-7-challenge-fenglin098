@@ -17,6 +17,9 @@ public class DataLoader implements CommandLineRunner {
     RoleRepository roleRepository;
 
     @Autowired
+    MessageRepository messageRepository;
+
+    @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
     @Override
